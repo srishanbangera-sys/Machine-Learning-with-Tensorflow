@@ -21,4 +21,11 @@ def build_model(num_classes):
     model.add(Dense(128, activation='relu'))
     model.add(Dropout(0.5))
     model.add(Dense(num_classes, activation='relu'))
-    
+
+    model.compile(
+        optimizer='adam',
+        loss='categorical_crossentropy'
+        metrics=['accuracy']
+    )
+
+    return model
